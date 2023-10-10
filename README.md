@@ -429,3 +429,104 @@ Feel free to run and modify these examples to deepen your understanding of Ruby 
    In this example, we define a `ComplexNumber` class and overload the `+` operator to perform addition of complex numbers in a more natural way.
 
 These advanced Ruby concepts provide developers with powerful tools for creating dynamic, flexible, and expressive code in a variety of situations. Understanding and using these features effectively can significantly enhance your Ruby programming skills.
+
+### Ruby for CGI Programming
+
+In this chapter, we will explore the use of Ruby for Common Gateway Interface (CGI) programming. CGI is a protocol that enables web servers to execute external scripts or programs in response to HTTP requests. Ruby's simplicity and versatility make it a suitable choice for creating dynamic web applications using CGI. We'll cover the fundamental concepts, code structure, and best practices for CGI programming in Ruby.
+
+### 1. Setting Up Your Environment
+
+Before diving into CGI programming with Ruby, ensure that you have the following components set up:
+
+- **Web Server:** A web server (e.g., Apache, Nginx) properly configured to handle CGI requests. Check your server's documentation for specific configuration instructions.
+
+- **Ruby Installation:** Ruby should be installed on your server. You can verify the installation by running `ruby -v` in the terminal.
+
+- **Executable CGI Scripts:** CGI scripts in Ruby should have executable permissions (e.g., `chmod +x script.rb`) and be placed in a directory designated for CGI scripts on your web server.
+
+### 2. Writing Your First CGI Script
+
+Let's begin by creating a simple Ruby CGI script that generates an HTML response. This script will act as a "Hello, World!" for CGI programming with Ruby.
+
+```ruby
+#!/usr/bin/env ruby
+require 'cgi'
+
+# Create a CGI object to interact with the CGI environment
+cgi = CGI.new
+
+# Set the HTTP content type to text/html
+puts "Content-Type: text/html\n\n"
+
+# Generate the HTML response
+puts "<html>"
+puts "<head>"
+puts "<title>My First Ruby CGI Script</title>"
+puts "</head>"
+puts "<body>"
+puts "<h1>Hello, CGI World!</h1>"
+puts "</body>"
+puts "</html>"
+```
+
+- We start the script with a "shebang" (`#!/usr/bin/env ruby`) to specify the Ruby interpreter to use.
+
+- We require the `cgi` library to work with CGI parameters and generate proper HTTP headers.
+
+- The `CGI.new` call creates a CGI object to interact with the CGI environment.
+
+- We set the HTTP content type to `text/html` using `puts` and include a double newline (`\n\n`) to separate headers from content.
+
+- The HTML response is generated within the script using `puts`.
+
+### 3. Handling Input
+
+One common use case for CGI scripts is processing user input from HTML forms. Ruby's `CGI` library simplifies the retrieval of form data from HTTP requests.
+
+```ruby
+# ...
+
+# Check if the form was submitted
+if cgi.request_method == 'POST'
+  # Retrieve form data
+  username = cgi['username']
+  password = cgi['password']
+
+  # Process the form data
+  puts "<h1>Form Data Submitted:</h1>"
+  puts "<p>Username: #{username}</p>"
+  puts "<p>Password: #{password}</p>"
+else
+  # Display the HTML form for user input
+  puts "<h1>Submit a Form</h1>"
+  puts "<form method='post' action='#{cgi.script_name}'>"
+  puts "<label for='username'>Username:</label>"
+  puts "<input type='text' id='username' name='username' required><br>"
+  puts "<label for='password'>Password:</label>"
+  puts "<input type='password' id='password' name='password' required><br>"
+  puts "<input type='submit' value='Submit'>"
+  puts "</form>"
+end
+
+# ...
+```
+
+- We use `cgi.request_method` to check if the form was submitted via a POST request.
+
+- If the form was submitted, we retrieve and display the submitted username and password.
+
+- If the form was not submitted, we display an HTML form that allows users to input their username and password. The `action` attribute of the form specifies the same script as the target for the form submission.
+
+### 4. Security Considerations
+
+When handling user input in CGI scripts, it's crucial to implement security measures to prevent common web vulnerabilities, such as Cross-Site Scripting (XSS) and SQL injection. Sanitize user input, validate data, and avoid executing commands based on user input without proper validation.
+
+### 5. Next
+
+CGI programming with Ruby provides a straightforward way to create dynamic web applications that respond to HTTP requests. By mastering the basics outlined in this chapter, you can build more complex web applications and explore further Ruby web development options, such as Ruby on Rails and Sinatra, for more efficient and scalable solutions.
+
+# Conclusion
+
+Throughout this tutorial, you've gained the knowledge and skills necessary to start your journey as a Ruby developer. Whether you're interested in web development, automation, or other software projects, Ruby's expressive and versatile nature makes it a powerful language to have in your toolkit.
+
+As you continue your Ruby programming journey, remember to practice, experiment, and explore the vast ecosystem of libraries and frameworks that Ruby has to offer. By doing so, you'll become a proficient Ruby developer capable of creating elegant and efficient solutions for a wide range of applications. Happy coding!
