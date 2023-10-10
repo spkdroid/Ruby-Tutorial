@@ -10,7 +10,7 @@ Ruby Programming Language: A Versatile and Elegant Journey into Programming<br>
 </br>
 
 <p align="center">
-<img src="/icon.png"/>
+<img src="/Ruby_logo.svg.png" height=150 width=150/>
 </p>
 
 # Ruby Programming Language
