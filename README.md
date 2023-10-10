@@ -59,7 +59,7 @@ Ruby Programming Language: A Versatile and Elegant Journey into Programming<br>
 
 **7. Learning Ruby:**
    - Ruby's simplicity and elegant syntax make it a great choice for beginners in programming.
-   - You can start learning Ruby by installing it on your computer and working through tutorials, online courses, or books.
+   - You can start learning Ruby by installing it on your computer and working through this tutorials.
 
 Ruby's philosophy of "optimizing for developer happiness" has made it a beloved language in the programming community, and it continues to be a popular choice for a wide range of software development projects. Whether you're a beginner or an experienced programmer, Ruby offers a friendly and enjoyable programming experience.
 
