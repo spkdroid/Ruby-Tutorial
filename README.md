@@ -1,6 +1,17 @@
-# Ruby-Tutorial
+<h1 align="center">Ruby in 60 minutes</h1>
 
-Ruby Programming Language: A Versatile and Elegant Journey into Programming
+<p align="center">
+  <a href="https://opensource.org/licenses/Apache-2.0"><img alt="License" src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"/></a>
+</p>
+
+<p align="center">  
+Ruby Programming Language: A Versatile and Elegant Journey into Programming<br>
+</p>
+</br>
+
+<p align="center">
+<img src="/icon.png"/>
+</p>
 
 # Ruby Programming Language
 
